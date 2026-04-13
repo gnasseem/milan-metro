@@ -230,8 +230,8 @@ body {
 }
 
 .stop-name {
-  font-size: 14px; font-weight: 500;
-  color: var(--ink-2);
+  font-size: 15px; font-weight: 500;
+  color: var(--ink);
   font-family: 'IBM Plex Mono', monospace;
 }
 
@@ -245,35 +245,56 @@ body {
 /* ── dot-count badge  ●●●●●●● ── */
 .dotcount {
   font-size: 9px; letter-spacing: 1.5px;
-  color: var(--ink-3);
+  color: var(--lc, var(--ink-3));   /* inherits line colour for subtle tint */
+  opacity: .5;
   font-family: 'IBM Plex Mono', monospace;
   white-space: nowrap;
 }
 
 /* ─────────────────────────────────────────
    TRANSFER CARD
+   Grid mirrors the station rows: [dot-col] [content]
+   Left column carries the gradient line through the card.
 ───────────────────────────────────────── */
 .xfer {
-  margin: 2px 16px;
+  margin: 0 16px;                         /* no vertical gap — line must be flush */
   background: var(--raised);
   border-radius: 12px;
-  padding: 13px 16px;
-  display: flex; align-items: center; justify-content: center; gap: 10px;
-  border: 1.5px solid rgba(0,0,0,.07);
-  position: relative; overflow: hidden;
+  padding: 0;
+  display: grid;
+  grid-template-columns: var(--dot-col) 1fr;
+  border-top:    3px solid var(--from, #ccc);
+  border-bottom: 3px solid var(--to,   #ccc);
+  border-left:   1px solid rgba(0,0,0,.07);
+  border-right:  1px solid rgba(0,0,0,.07);
+  position: relative;
+  overflow: hidden;
 }
 
-/* coloured top / bottom edges */
-.xfer::before, .xfer::after {
+/* Left column: gradient line connecting the two segments */
+.xfer-line {
+  position: relative;
+  min-height: 52px;
+}
+.xfer-line::before {
   content: '';
-  position: absolute; left: 0; right: 0;
-  height: 3px;
+  position: absolute;
+  left:   calc(50% - var(--line-w) / 2);  /* same centre as station dots */
+  top:    -3px;                            /* overlap the top border */
+  bottom: -3px;                            /* overlap the bottom border */
+  width:  var(--line-w);
+  background: linear-gradient(to bottom, var(--from, #ccc), var(--to, #ccc));
 }
-.xfer::before { top: 0; background: var(--from, #ccc); }
-.xfer::after  { bottom: 0; background: var(--to, #ccc); }
 
-.xfer svg      { width: 24px; height: 24px; color: var(--ink-2); }
-.xfer-arrow    { width: 18px; height: 18px; color: var(--ink-3); flex-shrink: 0; }
+/* Right column: badges + walking icon + arrow */
+.xfer-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 16px 13px 0;
+}
+.xfer-content svg { width: 24px; height: 24px; color: var(--ink-2); }
+.xfer-arrow       { width: 18px; height: 18px; color: var(--ink-3); flex-shrink: 0; }
 
 /* ─────────────────────────────────────────
    RENDEZVOUS CARD
