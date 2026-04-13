@@ -1,303 +1,329 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Milano Metro Guide</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%23FF1F44'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='18' font-weight='800' font-family='Arial'>M</text></svg>" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Milan Metro Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%23E4002B'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='17' font-weight='800' font-family='Arial'>M</text></svg>"/>
 </head>
 <body>
 
-<!-- TAB BAR -->
+<!-- ── PROGRESS ── -->
+<div class="progress-bar"></div>
+
+<!-- ── TAB BAR ── -->
 <nav class="tab-bar">
+  <!-- Leg 1: Airport → Hotel -->
   <button class="tab active" data-leg="1" aria-label="Airport to Hotel">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2 1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>
-    <svg class="arrow-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    <!-- airplane -->
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>
+    <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    <!-- bed -->
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4z"/></svg>
   </button>
+  <!-- Leg 2: Hotel → Concert -->
   <button class="tab" data-leg="2" aria-label="Hotel to Concert">
+    <!-- bed -->
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4z"/></svg>
-    <svg class="arrow-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    <!-- music note -->
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3z"/></svg>
   </button>
 </nav>
 
-<div class="progress-bar"></div>
-
 <main>
 
-<!-- ═══════════════════════════
-     LEG 1 — LINATE → PORTA VENEZIA
-════════════════════════════ -->
+<!-- ══════════════════════════════════════
+     LEG 1 — LINATE AIRPORT → NYU HOTEL
+══════════════════════════════════════ -->
 <section class="journey active" id="leg1">
 
-  <div class="origin-card">
-    <div class="icon-wrap" style="background:rgba(45,142,255,.15);border:1px solid rgba(45,142,255,.3)">
-      <svg viewBox="0 0 24 24" fill="#2D8EFF" width="26" height="26"><path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2 1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>
+  <!-- ORIGIN -->
+  <div class="ep-card">
+    <div class="ep-icon" style="background:#E8F0FB">
+      <!-- airplane -->
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="#005BAC"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>
     </div>
     <div>
-      <div class="station-name">Linate Aeroporto</div>
-      <div class="subtitle">Milano Linate · MXP</div>
+      <div class="ep-name">Linate Aeroporto</div>
+      <div class="ep-sub">LIN · MILANO LINATE</div>
     </div>
   </div>
 
-  <!-- M4 SEGMENT
-       --lc      = the line color
-       --lc-glow = glow rgba for box-shadow on board/alight dots -->
-  <div class="line-segment" style="--lc:var(--m4); --lc-glow:var(--m4-glow)">
+  <!-- ── M4 LINE ── -->
+  <div class="seg m4">
 
-    <div class="direction-pill" style="--lc:var(--m4); --lc-glow:var(--m4-glow)">
-      <div class="line-badge" style="--lc:var(--m4)">M4</div>
+    <div class="dir-chip">
+      <div class="lbadge m4">M4</div>
+      <!-- chevron down -->
       <svg viewBox="0 0 24 24" fill="white"><path d="M7 10l5 5 5-5"/></svg>
       San Cristoforo
     </div>
 
-    <div class="station board">
-      <div class="station-dot" style="--lc:var(--m4); --lc-glow:var(--m4-glow)"></div>
-      <span class="station-label">Linate Aeroporto</span>
+    <div class="stop key">
+      <div class="dot"></div>
+      <span class="stop-name">Linate Aeroporto</span>
     </div>
-    <div class="station">
-      <div class="station-dot" style="--lc:var(--m4)"></div>
-      <span class="station-label">Repetti</span>
+    <div class="stop">
+      <div class="dot"></div>
+      <span class="stop-name">Repetti</span>
     </div>
-    <div class="station">
-      <div class="station-dot" style="--lc:var(--m4)"></div>
-      <span class="station-label">Stazione Forlanini</span>
+    <div class="stop">
+      <div class="dot"></div>
+      <span class="stop-name">Stazione Forlanini</span>
     </div>
-    <div class="station">
-      <div class="station-dot" style="--lc:var(--m4)"></div>
-      <span class="station-label">Argonne</span>
+    <div class="stop">
+      <div class="dot"></div>
+      <span class="stop-name">Argonne</span>
     </div>
-    <div class="station">
-      <div class="station-dot" style="--lc:var(--m4)"></div>
-      <span class="station-label">Susa</span>
+    <div class="stop">
+      <div class="dot"></div>
+      <span class="stop-name">Susa</span>
     </div>
-    <div class="station">
-      <div class="station-dot" style="--lc:var(--m4)"></div>
-      <span class="station-label">Dateo</span>
+    <div class="stop">
+      <div class="dot"></div>
+      <span class="stop-name">Dateo</span>
     </div>
-    <div class="station">
-      <div class="station-dot" style="--lc:var(--m4)"></div>
-      <span class="station-label">Tricolore</span>
+    <div class="stop">
+      <div class="dot"></div>
+      <span class="stop-name">Tricolore</span>
     </div>
-    <div class="station alight">
-      <div class="station-dot" style="--lc:var(--m4); --lc-glow:var(--m4-glow)"></div>
-      <span class="station-label">San Babila</span>
-      <span class="stop-count">7 fermate</span>
+    <div class="stop key">
+      <div class="dot"></div>
+      <span class="stop-name">San Babila</span>
+      <span class="dotcount">●●●●●●●</span>
     </div>
-  </div>
+
+  </div><!-- /seg m4 -->
 
   <!-- TRANSFER M4 → M1 -->
-  <div class="transfer-card" style="--from-color:var(--m4); --to-color:var(--m1)">
-    <div class="line-badge" style="--lc:var(--m4)">M4</div>
-    <div class="transfer-inner">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-        <circle cx="12" cy="4" r="1.8"/>
-        <path d="M9 9h6l-1 5-2 2-1 4H9l1-4-2-3 1-4z"/>
-        <path d="M9 12l-3 4M15 12l3 4"/>
-      </svg>
-      <span class="walk-label">Transfer</span>
+  <div class="xfer" style="--from:#005BAC; --to:#E4002B">
+    <div class="lbadge m4">M4</div>
+    <!-- walking person -->
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+      <circle cx="12" cy="4.5" r="1.8"/>
+      <path d="M9.5 9.5h5l-1 5-2 2-1 4H9l1-4-2.5-3 2-4z"/>
+      <path d="M9.5 13l-2.5 4M14.5 13l2.5 4"/>
+    </svg>
+    <div>
+      <svg class="arr2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <div class="xfer-label">Change line</div>
     </div>
-    <svg class="arrow-transfer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-    <div class="line-badge" style="--lc:var(--m1)">M1</div>
+    <div class="lbadge m1">M1</div>
   </div>
 
-  <!-- M1 SEGMENT -->
-  <div class="line-segment" style="--lc:var(--m1); --lc-glow:var(--m1-glow)">
+  <!-- ── M1 LINE ── -->
+  <div class="seg m1">
 
-    <div class="direction-pill" style="--lc:var(--m1); --lc-glow:var(--m1-glow)">
-      <div class="line-badge" style="--lc:var(--m1)">M1</div>
+    <div class="dir-chip">
+      <div class="lbadge m1">M1</div>
       <svg viewBox="0 0 24 24" fill="white"><path d="M7 10l5 5 5-5"/></svg>
       Sesto 1° Maggio FS
     </div>
 
-    <div class="station board">
-      <div class="station-dot" style="--lc:var(--m1); --lc-glow:var(--m1-glow)"></div>
-      <span class="station-label">San Babila</span>
+    <div class="stop key">
+      <div class="dot"></div>
+      <span class="stop-name">San Babila</span>
     </div>
-    <div class="station">
-      <div class="station-dot" style="--lc:var(--m1)"></div>
-      <span class="station-label">Palestro</span>
+    <div class="stop">
+      <div class="dot"></div>
+      <span class="stop-name">Palestro</span>
     </div>
-    <div class="station alight">
-      <div class="station-dot" style="--lc:var(--m1); --lc-glow:var(--m1-glow)"></div>
-      <span class="station-label">Porta Venezia</span>
-      <span class="stop-count">2 fermate</span>
+    <div class="stop key">
+      <div class="dot"></div>
+      <span class="stop-name">Porta Venezia</span>
+      <span class="dotcount">●●</span>
     </div>
-  </div>
 
-  <div class="destination-card" style="border-left:3px solid var(--m1); margin-top:6px">
-    <div class="icon-wrap" style="background:rgba(255,31,68,.15);border:1px solid rgba(255,31,68,.3)">
-      <svg viewBox="0 0 24 24" fill="#FF1F44" width="24" height="24"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg>
+  </div><!-- /seg m1 -->
+
+  <!-- DESTINATION -->
+  <div class="ep-card" style="border-left:4px solid #E4002B; margin-top:6px">
+    <div class="ep-icon" style="background:#FDEAED">
+      <!-- exit arrow -->
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="#E4002B"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg>
     </div>
     <div>
-      <div class="station-name">Porta Venezia</div>
-      <div class="subtitle">NYU Hotel — uscita / exit</div>
+      <div class="ep-name">Porta Venezia</div>
+      <div class="ep-sub">EXIT · NYU HOTEL</div>
     </div>
   </div>
 
-  <div class="scroll-hint">
+  <div class="hint">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 10l5 5 5-5"/></svg>
   </div>
 
 </section>
 
-<!-- ═══════════════════════════
-     LEG 2 — PORTA VENEZIA → ASSAGO
-════════════════════════════ -->
+
+<!-- ══════════════════════════════════════
+     LEG 2 — NYU HOTEL → ASSAGO FORUM
+══════════════════════════════════════ -->
 <section class="journey" id="leg2">
 
-  <div class="origin-card">
-    <div class="icon-wrap" style="background:rgba(255,31,68,.15);border:1px solid rgba(255,31,68,.3)">
-      <svg viewBox="0 0 24 24" fill="#FF1F44" width="26" height="26"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4z"/></svg>
+  <!-- ORIGIN -->
+  <div class="ep-card">
+    <div class="ep-icon" style="background:#FDEAED">
+      <!-- bed -->
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="#E4002B"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9a4 4 0 0 0-4-4z"/></svg>
     </div>
     <div>
-      <div class="station-name">Porta Venezia</div>
-      <div class="subtitle">NYU Hotel</div>
+      <div class="ep-name">Porta Venezia</div>
+      <div class="ep-sub">NYU HOTEL</div>
     </div>
   </div>
 
-  <!-- M1 SEGMENT -->
-  <div class="line-segment" style="--lc:var(--m1); --lc-glow:var(--m1-glow)">
+  <!-- ── M1 LINE ── -->
+  <div class="seg m1">
 
-    <div class="direction-pill" style="--lc:var(--m1); --lc-glow:var(--m1-glow)">
-      <div class="line-badge" style="--lc:var(--m1)">M1</div>
+    <div class="dir-chip">
+      <div class="lbadge m1">M1</div>
       <svg viewBox="0 0 24 24" fill="white"><path d="M7 10l5 5 5-5"/></svg>
       Bisceglie
     </div>
 
-    <div class="station board">
-      <div class="station-dot" style="--lc:var(--m1); --lc-glow:var(--m1-glow)"></div>
-      <span class="station-label">Porta Venezia</span>
+    <div class="stop key">
+      <div class="dot"></div>
+      <span class="stop-name">Porta Venezia</span>
     </div>
-    <div class="station">
-      <div class="station-dot" style="--lc:var(--m1)"></div>
-      <span class="station-label">Palestro</span>
+    <div class="stop">
+      <div class="dot"></div>
+      <span class="stop-name">Palestro</span>
     </div>
-    <div class="station">
-      <div class="station-dot" style="--lc:var(--m1)"></div>
-      <span class="station-label">San Babila</span>
+    <div class="stop">
+      <div class="dot"></div>
+      <span class="stop-name">San Babila</span>
     </div>
-    <div class="station">
-      <div class="station-dot" style="--lc:var(--m1)"></div>
-      <span class="station-label">Duomo</span>
+    <div class="stop">
+      <div class="dot"></div>
+      <span class="stop-name">Duomo</span>
     </div>
-    <div class="station">
-      <div class="station-dot" style="--lc:var(--m1)"></div>
-      <span class="station-label">Cordusio</span>
+    <div class="stop">
+      <div class="dot"></div>
+      <span class="stop-name">Cordusio</span>
     </div>
-    <div class="station">
-      <div class="station-dot" style="--lc:var(--m1)"></div>
-      <span class="station-label">Cairoli</span>
+    <div class="stop">
+      <div class="dot"></div>
+      <span class="stop-name">Cairoli</span>
     </div>
-    <div class="station alight">
-      <div class="station-dot" style="--lc:var(--m1); --lc-glow:var(--m1-glow)"></div>
-      <span class="station-label">Cadorna FN</span>
-      <span class="stop-count">6 fermate</span>
+    <div class="stop key">
+      <div class="dot"></div>
+      <span class="stop-name">Cadorna FN</span>
+      <span class="dotcount">●●●●●●</span>
     </div>
-  </div>
+
+  </div><!-- /seg m1 -->
 
   <!-- TRANSFER M1 → M2 -->
-  <div class="transfer-card" style="--from-color:var(--m1); --to-color:var(--m2)">
-    <div class="line-badge" style="--lc:var(--m1)">M1</div>
-    <div class="transfer-inner">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-        <circle cx="12" cy="4" r="1.8"/>
-        <path d="M9 9h6l-1 5-2 2-1 4H9l1-4-2-3 1-4z"/>
-        <path d="M9 12l-3 4M15 12l3 4"/>
-      </svg>
-      <span class="walk-label">Transfer</span>
+  <div class="xfer" style="--from:#E4002B; --to:#00863E">
+    <div class="lbadge m1">M1</div>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+      <circle cx="12" cy="4.5" r="1.8"/>
+      <path d="M9.5 9.5h5l-1 5-2 2-1 4H9l1-4-2.5-3 2-4z"/>
+      <path d="M9.5 13l-2.5 4M14.5 13l2.5 4"/>
+    </svg>
+    <div>
+      <svg class="arr2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <div class="xfer-label">Change line</div>
     </div>
-    <svg class="arrow-transfer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-    <div class="line-badge" style="--lc:var(--m2)">M2</div>
+    <div class="lbadge m2">M2</div>
   </div>
 
-  <!-- M2 SEGMENT -->
-  <div class="line-segment" style="--lc:var(--m2); --lc-glow:var(--m2-glow)">
+  <!-- ── M2 LINE ── -->
+  <div class="seg m2">
 
-    <div class="direction-pill" style="--lc:var(--m2); --lc-glow:var(--m2-glow)">
-      <div class="line-badge" style="--lc:var(--m2)">M2</div>
+    <div class="dir-chip">
+      <div class="lbadge m2">M2</div>
       <svg viewBox="0 0 24 24" fill="white"><path d="M7 10l5 5 5-5"/></svg>
       Assago M. Forum
     </div>
 
-    <div class="station board">
-      <div class="station-dot" style="--lc:var(--m2); --lc-glow:var(--m2-glow)"></div>
-      <span class="station-label">Cadorna FN</span>
+    <div class="stop key">
+      <div class="dot"></div>
+      <span class="stop-name">Cadorna FN</span>
     </div>
-    <div class="station">
-      <div class="station-dot" style="--lc:var(--m2)"></div>
-      <span class="station-label">Sant'Ambrogio</span>
+    <div class="stop">
+      <div class="dot"></div>
+      <span class="stop-name">Sant'Ambrogio</span>
     </div>
-    <div class="station">
-      <div class="station-dot" style="--lc:var(--m2)"></div>
-      <span class="station-label">Sant'Agostino</span>
+    <div class="stop">
+      <div class="dot"></div>
+      <span class="stop-name">Sant'Agostino</span>
     </div>
-    <div class="station">
-      <div class="station-dot" style="--lc:var(--m2)"></div>
-      <span class="station-label">Porta Genova FS</span>
+    <div class="stop">
+      <div class="dot"></div>
+      <span class="stop-name">Porta Genova FS</span>
     </div>
-    <div class="station">
-      <div class="station-dot" style="--lc:var(--m2)"></div>
-      <span class="station-label">Romolo</span>
+    <div class="stop">
+      <div class="dot"></div>
+      <span class="stop-name">Romolo</span>
     </div>
-    <div class="station">
-      <div class="station-dot" style="--lc:var(--m2)"></div>
-      <span class="station-label">Famagosta</span>
+    <div class="stop">
+      <div class="dot"></div>
+      <span class="stop-name">Famagosta</span>
     </div>
-    <div class="station">
-      <div class="station-dot" style="--lc:var(--m2)"></div>
-      <span class="station-label">Assago M. Nord</span>
+    <div class="stop">
+      <div class="dot"></div>
+      <span class="stop-name">Assago M. Nord</span>
     </div>
-    <div class="station alight">
-      <div class="station-dot" style="--lc:var(--m2); --lc-glow:var(--m2-glow)"></div>
-      <span class="station-label">Assago M. Forum</span>
-      <span class="stop-count">7 fermate</span>
+    <div class="stop key">
+      <div class="dot"></div>
+      <span class="stop-name">Assago M. Forum</span>
+      <span class="dotcount">●●●●●●●</span>
     </div>
-  </div>
+
+  </div><!-- /seg m2 -->
 
   <!-- RENDEZVOUS -->
-  <div class="rendezvous-card">
-    <div class="rdv-title">Rendezvous</div>
-    <div class="rendezvous-items">
+  <div class="rdv">
+    <div class="rdv-head">
+      <!-- star/target icon -->
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17 5.8 21.3l2.4-7.4L2 9.4h7.6z"/></svg>
+      Meet here
+    </div>
+    <div class="rdv-rows">
 
-      <div class="rdv-item">
-        <div class="rdv-icon">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-9 14H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V7h2v2zm6 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"/></svg>
+      <div class="rdv-row">
+        <div class="rdv-ico">
+          <!-- entrance / door -->
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zm1-11h-2v3H8v2h3v3h2v-3h3v-2h-3z"/></svg>
         </div>
         <div>
-          <div class="rdv-value">Ingresso 3</div>
-          <div class="rdv-sub">Entrance / Entrée / Eingang</div>
+          <div class="rdv-val">Entrance 3</div>
+          <div class="rdv-hint">INGRESSO · ENTRÉE · EINGANG</div>
         </div>
       </div>
 
-      <div class="rdv-item">
-        <div class="rdv-icon">
+      <div class="rdv-row">
+        <div class="rdv-ico">
+          <!-- clock -->
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5z"/></svg>
         </div>
         <div>
-          <div class="rdv-value">21:30</div>
-          <div class="rdv-sub">Lunedì / Monday / Lundi</div>
+          <div class="rdv-val">21:30</div>
+          <div class="rdv-hint">MONDAY · LUNDI · LUNEDÌ</div>
         </div>
       </div>
 
     </div>
   </div>
 
-  <div class="destination-card" style="border-left:3px solid var(--m2); margin-top:12px">
-    <div class="icon-wrap" style="background:rgba(0,212,106,.15);border:1px solid rgba(0,212,106,.3)">
-      <svg viewBox="0 0 24 24" fill="#00D46A" width="24" height="24"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3z"/></svg>
+  <!-- DESTINATION -->
+  <div class="ep-card" style="border-left:4px solid #00863E; margin-top:12px">
+    <div class="ep-icon" style="background:#E6F5EC">
+      <!-- music note -->
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="#00863E"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3z"/></svg>
     </div>
     <div>
-      <div class="station-name">Assago Milanofiori Forum</div>
-      <div class="subtitle">Rock Concert — NYUAD Faculty Band</div>
+      <div class="ep-name">Assago Milanofiori Forum</div>
+      <div class="ep-sub">ROCK CONCERT · NYUAD FACULTY BAND</div>
     </div>
   </div>
 
-  <div class="scroll-hint hidden">
+  <div class="hint hide">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 10l5 5 5-5"/></svg>
   </div>
 
