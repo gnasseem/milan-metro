@@ -110,8 +110,8 @@ body {
 .tab::after {
   content: '';
   position: absolute; bottom: 0;
-  left: 25%; right: 25%;
-  height: 2px; border-radius: 2px 2px 0 0;
+  left: 0; right: 0;
+  height: 3px;
   transform: scaleX(0);
   transition: transform .25s;
 }
