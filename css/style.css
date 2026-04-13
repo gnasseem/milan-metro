@@ -76,7 +76,8 @@ body {
 }
 
 .tab {
-  flex: 1;
+  flex: 0 0 50%;
+  width: 50%;
   display: flex; align-items: center; justify-content: center;
   gap: 7px;
   padding: 15px 8px;
@@ -88,6 +89,8 @@ body {
   transition: color .2s;
   position: relative;
 }
+
+.tab:first-child { border-right: 1px solid rgba(255,255,255,.08); }
 
 .tab svg { width: 18px; height: 18px; flex-shrink: 0; }
 .tab .arr { width: 11px; height: 11px; opacity: .4; }
@@ -259,14 +262,8 @@ body {
 .xfer::before { top: 0; background: var(--from, #ccc); }
 .xfer::after  { bottom: 0; background: var(--to, #ccc); }
 
-.xfer svg { width: 24px; height: 24px; color: var(--ink-2); }
-.xfer .arr2 { width: 14px; height: 14px; color: var(--ink-3); }
-.xfer-label {
-  font-family: 'Figtree', sans-serif;
-  font-size: 10px; font-weight: 700;
-  letter-spacing: .1em; text-transform: uppercase;
-  color: var(--ink-3);
-}
+.xfer svg      { width: 24px; height: 24px; color: var(--ink-2); }
+.xfer-arrow    { width: 18px; height: 18px; color: var(--ink-3); flex-shrink: 0; }
 
 /* ─────────────────────────────────────────
    RENDEZVOUS CARD
@@ -315,6 +312,27 @@ body {
   font-family: 'IBM Plex Mono', monospace;
   letter-spacing: .04em;
 }
+
+/* ─────────────────────────────────────────
+   HOTEL PICTOGRAM CARD  (end of Leg 1)
+───────────────────────────────────────── */
+.hotel-card {
+  margin: 8px 16px 0;
+  background: var(--gold-bg);
+  border: 1.5px solid var(--gold-bd);
+  border-radius: var(--radius);
+  padding: 16px 14px;
+}
+
+.hotel-card .rdv-head { margin-bottom: 12px; }
+
+.hotel-picto {
+  display: flex;
+  justify-content: center;
+  padding: 4px 0 2px;
+}
+
+.hotel-picto svg { width: 100%; max-width: 220px; height: auto; }
 
 /* ─────────────────────────────────────────
    SCROLL HINT
